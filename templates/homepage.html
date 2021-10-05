@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="container ">
+
+
+    <div class="row g-4 py-5 cols-1 row-cols-lg-3 ">
+        <div class="card-columns feature col">
+
+
+            {% for d in job_post %}
+            <div class="card">
+                {{d.pk}}
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+
+                    <ul class="li">
+                        <a href="{% url 'job_Detail' d.pk %}">
+                            {{d.title}}
+
+                        </a>
+
+
+                        {{d.hr_name}}
+                        {{d.postion}}
+                        {{d.salary}}
+                        {{d.job_time}}
+
+                        {{d.job_tpe}}
+                        {{d.job_info}}
+
+
+                    </ul>
+                    <ul class="li"></ul>
+
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+    <div class="row">
+
+        <div class="card-columns">
+            []
+
+
+            {% for d in us %}
+            <div class="card">
+                <img class="card-img-top" src="holder.js/100x180/" alt="">
+                <div class="card-body">
+
+                    <ul class="li">
+                        <a href="{% url 'profile_Detail' d.pk %}">
+
+                            <h6 class="card-title">
+
+                                {{d.bio}}
+
+                                {{d.user}}
+                            </h6>
+                        </a>
+                        <h6 class="card-title">{{d.roles}}
+                        </h6>
+                        <h6 class="card-title">{{d.first_name}}
+                        </h6>
+                        <h6 class="card-title">{{d.username}}
+                        </h6>
+                        <h6 class="card-title">{{d.username}}
+                        </h6>
+
+                    </ul>
+                    <ul class="li"></ul>
+
+
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock content %}

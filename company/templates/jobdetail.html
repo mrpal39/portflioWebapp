@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">{{objects.user}}
+    </h4>
+    <p></p>
+    <p class="mb-0">{{user.name}}
+    </p>
+  </div>
+{{objects.user}}
+
+{{ objects.title}}
+{{ objects.hr_name}}
+{{ objects.postion}}
+{{ objects.salary}}
+{{ objects.requrements}}
+{{ objects.job_tpe}}
+{{ objects.job_time}}
+{{ objects.job_info}}
+
+  
+{% endblock content %}

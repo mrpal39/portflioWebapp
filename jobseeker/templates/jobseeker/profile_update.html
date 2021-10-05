@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load i18n static crispy_forms_tags compress %}
+
+{% block content %}
+<h1>{{user}}</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+
+  {% csrf_token %}
+  {{form.as_p}}
+  <div class="col-md-6">
+    <div class="form-group{% if form.bio.errors %} has-error{% endif %}">
+      <label for="{{ form.bio.id_for_label }}" class="control-label">{% trans 'bio' %}</label>
+
+      <div class="controls">
+        <!-- {{ form.bio }}
+        {{ form.bio.errors }} -->
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+
+  <div class="form-group text-right">
+    <input type="submit" name="submit" class="btn btn-primary" value="{% trans 'update' %}">
+  </div>
+
+</form>
+
+
+
+{% endblock content %}

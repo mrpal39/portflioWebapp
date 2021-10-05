@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load i18n static crispy_forms_tags compress %}
+{% block content %}
+<form action="" method="post">
+{% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" name="submit" class="btn btn-primary" value="{% trans 'Create Account' %}">
+
+</form>  
+
+
+
+{% endblock content %}

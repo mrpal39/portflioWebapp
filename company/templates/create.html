@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+e
+{% block content %}
+<h1>jobpsot create</h1>
+<form action="" method="post">
+
+
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock content %}

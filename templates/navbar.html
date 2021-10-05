@@ -1,0 +1,29 @@
+{% load i18n static compress %}
+
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">LOOKME</a>
+      <a class="nav-item nav-link active" href="{% url 'homepage'%}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'profile_job' %}"> Selected Profile</a>
+
+      {% if user.is_authenticated %}
+
+      {% if user == user.profile.user %}
+      {% include "jobseeker_navbar.html" %}
+
+      {% elif user.company.user %}
+      {% include "company_navbar.html" %}
+      {% endif %}
+      <a class="nav-item nav-link" href="{% url 'logout' %}">{% trans 'Logout' %}</a>
+      {% else %}
+      <a class="nav-item nav-link" href="{% url 'create_jobseeker' %}">{% trans 'Jobseeker Account' %}</a>
+
+      <a class="nav-item nav-link" href="{% url 'create_employer' %}">{% trans 'Company Account' %}</a>
+      <a class="nav-item nav-link" href="{% url 'login' %}">login</a>
+      {% endif %}
+
+    </div>
+  </nav>
+</div>

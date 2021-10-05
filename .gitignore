@@ -1,0 +1,17 @@
+*.log
+*.pyc
+*.sqlite3
+*.mo
+.coverage
+env
+.idea
+__pycache__
+htmlcov
+media
+pet_images
+screendumps
+static_root
+.vscode
+static
+staticfile
+
